@@ -1,32 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Документация для класса Templates</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 0;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-    </style>
-</head>
-<body>
 
 <h1>Документация для класса Templates</h1>
 
@@ -162,8 +133,6 @@ $tpl->compile('main');
 echo $tpl->result('main');
 </code></pre>
 
-</body>
-</html>
 
 #index.html
 ```html
