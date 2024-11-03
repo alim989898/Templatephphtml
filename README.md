@@ -101,3 +101,29 @@ $form[] = $tpl->html_end();
 $tpl->html(implode('', $form)); // Установка файла шаблона
 $tpl->compile('main'); // Компиляция данных
 echo $tpl->result('main');
+
+### Пример 2
+
+```php
+$tpl = new Templates();
+$tpl->html('{test}'); // Устанавливаем HTML-шаблон с заполнителем
+$tpl->set('{test}', "test"); // Устанавливаем значение для заполнителя
+$tpl->compile('main'); // Компилируем шаблон
+echo $tpl->result('main'); // Выводим результат
+
+### Пример 3
+
+```php
+define('ROOT', dirname(__FILE__));
+$tpl = new Templates();
+
+$tpl->html('{test}'); // Устанавливаем шаблон с заполнителем
+$tpl->set('{test}', "test"); // Устанавливаем значение для заполнителя
+$tpl->compile('main_gen'); // Компилируем шаблон
+$tpl->clear(); // Очищаем данные
+
+$tpl->load('index.html'); // Загружаем шаблон из файла
+$tpl->set('{test}', "тест-3333333"); // Устанавливаем значение для заполнителя
+$tpl->set('{test}', $tpl->result('main_gen')); // Устанавливаем результат предыдущего шаблона
+$tpl->compile('main'); // Компилируем финальный шаблон
+echo $tpl->result('main'); // Выводим результат
